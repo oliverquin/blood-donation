@@ -1,0 +1,30 @@
+<form #donarregister="ngForm" (ngSubmit) = "onClickSubmit(donarregister)" >
+    <div>
+        <label>Name: </label> <input type = "text" name = "name" placeholder = "name" ngModel>
+    </div>
+    <br/>
+    <div>
+    <label>Age: </label> <input type = "number" name = "age" placeholder = "age" ngModel>
+   </div>
+    <br/>
+    <div>
+        <label>Blood Group: </label>
+        <select name = "bloodgroup" ngModel (change)="bloodGroupChange($event.target)">
+          <option *ngFor="let bloodgroup of bloodGroupList"  value={{bloodgroup}} >
+            {{bloodgroup}}
+          </option>
+        </select>
+      </div>
+    <br/>
+    <div>
+        <label>City: </label>
+        <select name = "city" ngModel (change)="cityChane($event.target)">
+          <option *ngFor="let city of cityList"  value={{city}} >
+            {{city}}
+          </option>
+        </select>
+      </div>
+   <br>
+
+    <input type = "submit" value = "submit">
+ </form>

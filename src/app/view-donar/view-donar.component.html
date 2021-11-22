@@ -1,0 +1,35 @@
+<div class="form-group">
+<input
+  type="text"
+  (keyup)="searchDonar($event)"
+  name="searchText"
+  placeholder="Type to search..."
+  [(ngModel)]="searchText"
+/>
+</div>
+
+<div>
+    
+    <table class="table table-striped">
+      <thead>
+          <tr>
+            <th>S.No</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Blood Group</th>
+            <th>City</th>
+            <th>Delete</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let donar of donarsList; let i = index;">
+          <td>{{ i+1 }}</td>
+          <td>{{ donar.name }}</td>
+          <td>{{ donar.age }}</td>
+          <td>{{ donar.bloodgroup }}</td>
+          <td>{{ donar.city }}</td>
+          <td> <div (click)="deleteDonar(donar.id)"> <i class="bi bi-trash"></i> </div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
